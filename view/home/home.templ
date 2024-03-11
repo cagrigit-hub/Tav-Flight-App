@@ -1,0 +1,23 @@
+package home
+
+import (
+	"github.com/cagrigit-hub/tav-app/model"
+	"github.com/cagrigit-hub/tav-app/view/layout"
+)
+
+templ Show(home model.Home) {
+	@layout.Base() {
+		<div class="flex flex-col items-center justify-center">
+			<div class="text-3xl font-bold text-red">
+				TOBB ETU GROUP 11 - TAV APP
+			</div>
+			<form hx-post="/upload-excel" enctype="multipart/form-data">
+				<div>Upload your Flight Data!</div>
+				<input type="file" id="file" name="file" accept=".xls,.xlsx"/>
+				<button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+					Upload
+				</button>
+			</form>
+		</div>
+	}
+}

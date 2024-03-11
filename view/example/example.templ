@@ -1,0 +1,25 @@
+
+package example
+
+import (
+	"github.com/cagrigit-hub/tav-app/view/layout"
+	"github.com/cagrigit-hub/tav-app/view/components"
+	"github.com/cagrigit-hub/tav-app/model"
+)
+
+templ Show(example model.Example) {
+	@layout.Base() {
+		<div>
+			@EcOne(example)
+			<form hx-post="/example" hx-target="#example" hx-swap="outerHTML">
+				@components.Input(components.InputProps{Type: "text", Name: "example"})
+				<button>Submit</button>
+			</form>
+		</div>
+	}
+}
+
+templ EcOne(example model.Example) {
+	<h1 id="example">hello { example.Text } from the user </h1>
+}
+

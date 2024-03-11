@@ -1,0 +1,16 @@
+
+package layout
+
+templ Base() {
+	<html>
+		<head>
+			<title>Tav Flight Application</title>
+			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+			<script src="https://cdn.tailwindcss.com"></script>
+		</head>
+		<body>
+			{ children... }
+			<script type="module" src="/static/jscode/bundle.js"></script>
+		</body>
+	</html>
+}
